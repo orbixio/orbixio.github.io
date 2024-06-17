@@ -1,6 +1,6 @@
 #-------------------------------
 # General Site Settings
-title: 0x4rs3nic
+title: orbixio
 logo: # You can add own logo. For example '/images/logo.png'.
 description: Security Engineer.
 baseurl: "" # The subpath of your site, e.g. /blog
@@ -17,7 +17,7 @@ author:
 #-------------------------------
 # Hero Settings
 hero:
-  title: orbixio
+  title: Orbixio
   description: Security Engineer.
   image: '/images/fire.gif'
 
