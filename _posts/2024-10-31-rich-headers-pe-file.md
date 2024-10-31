@@ -13,14 +13,14 @@ media_subpath: '/posts/rich_header'
 
 > The Rich Header is typically 128 bytes in size.
 
-![[Pasted image 20241029075042.png]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029075042.png)
 
-![[Pasted image 20241029075052.png]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029075052.png)
 
 The easiest way to understand it is to start at the end, which is how it must be parsed.
 The end of the rich header is demarked by the keyword “Rich”, or 0x68636952. It allows for easy identification of the Rich Header.
 
-![[Pasted image 20241029075238.png|*Fig 1.1 - _The RICH signature used to identify presence of data_*]]
+![Fig 1.1 - The RICH signature used to identify presence of data](https://orbixio.netlify.app/assets/img/Pasted image 20241029075238.png)
 
 Immediately following the “Rich” keyword is a checksum that functions as an XOR key. It can be used to decrypt the rest of the header. 
 
