@@ -16,6 +16,9 @@ The most commonly used architecture, most computers today are built on is the [V
 ![](https://orbixio.netlify.app/assets/img/Pasted image 20241030221046.png)
 _Von Neuman Architecture (Overview)_
 
+- **Control Unit (CU)** fetches instructions from the main memory.
+- **Arithmetic Logical Unit (ALU)** executes the instruction fetched from memory. The result of the executed instruction is either the Registers or the Memory.
+
 #### **Memory**
 
 > - Temporary data and instructions stored here
