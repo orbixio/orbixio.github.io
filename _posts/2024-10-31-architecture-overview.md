@@ -47,12 +47,26 @@ Whenever an application is run it is allocated it very own Virtual Memory that c
 
 ![](https://academy.hackthebox.com/storage/modules/85/memory_structure.jpg)
 
-| Segment | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Stack` | > *Last-in First-out (LIFO) design, fixed in size and data in it can only be accessed in a specific order by push-ing and pop-ing data.*<br>> *Grows from higher address to lower addresses.*<br>> *Contains local variables, arguments passed on to the program, and the return address of the parent process that called the program.*<br>[Visual Reference](https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/aed105638dc28ee3524baeaba8925e12.png) |
-| `Heap`  | > *Data can be stored and retrieved in any order.* <br>> *Heap is slower than the Stack.*<br>> *Memory is dynamically allocated using functions like `malloc` etc.*                                                                                                                                                                                                                                                                                                                               |
-| `Data`  | > *Used to store global and static data that is not variable remains constant.*<br>> Consists of "two parts": <br>    `Data` is used to hold variables<br>    `.bss` is used to hold unassigned variables                                                                                                                                                                                                                                                                                         |
-| `Text`  | > *Used to store `.text` section of PE (Portable Executable) which contains the "instructions" that are executed by the CPU.*                                                                                                                                                                                                                                                                                                                                                                     |
+
+**Stack**
+> *Last-in First-out (LIFO) design, fixed in size and data in it can only be accessed in a specific order by push-ing and pop-ing data.*<br>> *Grows from higher address to lower addresses.
+> *Contains local variables, arguments passed on to the program, and the return address of the parent process that called the program.
+[Visual Reference](https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/aed105638dc28ee3524baeaba8925e12.png)
+
+**Heap**
+> *Data can be stored and retrieved in any order.* 
+> *Heap is slower than the Stack.
+> *Memory is dynamically allocated using functions like `malloc` etc.*                                                                                              
+
+**Data**
+> *Used to store global and static data that is not variable remains constant.
+> Consists of "two parts": 
+  `Data` is used to hold variables
+  `.bss` is used to hold unassigned variables
+
+**Text**
+> *Used to store `.text` section of PE (Portable Executable) which contains the "instructions" that are executed by the CPU.*
+
 #### **IO/Storage Devices**
 
 > I/O (Input/Output) and storage devices are the peripheral devices that interact with the processor through bus interfaces, which function as 'highways' to transfer data and addresses, utilizing electrical charges to represent binary data.
@@ -61,7 +75,7 @@ Each Bus has a capacity of bits (or electrical charges) it can carry simultaneou
 
 ![](https://orbixio.netlify.app/assets/img/Pasted image 20241030223707.png)
 _Bus Interfaces_
----
+
 
 #### **Speed**
 
