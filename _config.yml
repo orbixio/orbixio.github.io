@@ -17,7 +17,7 @@ social:
 
 theme_mode: dark 
 cdn: "https://chirpy-img.netlify.app"
-avatar: "/assets/img/air-crash-burning-falling-plane-plane-crashed-ground_93314-3412.png"
+avatar: "https://raw.githubusercontent.com/orbixio/orbixio.github.io/f336a9d89ffd5084c43242124aa9d880627a075b/assets/img/air-crash-burning-falling-plane-plane-crashed-ground_93314-3412.png"
 toc: true
 
 assets:
