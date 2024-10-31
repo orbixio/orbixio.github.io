@@ -20,23 +20,27 @@ media_subpath: '/posts/rich_header'
 The easiest way to understand it is to start at the end, which is how it must be parsed.
 The end of the rich header is demarked by the keyword “Rich”, or 0x68636952. It allows for easy identification of the Rich Header.
 
-![Fig 1.1 - The RICH signature used to identify presence of data](https://orbixio.netlify.app/assets/img/Pasted image 20241029075238.png)
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029075238.png)
+_Fig 1.1 - The RICH signature used to identify presence of data_
 
 Immediately following the “Rich” keyword is a checksum that functions as an XOR key. It can be used to decrypt the rest of the header. 
 
-![[Pasted image 20241029075356.png|*_Fig 1.2 - The highlighted part is checksum_*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029075356.png)
+_Fig 1.2 - The highlighted part is checksum_
 
 If we use the key to XOR the data, working our way back we will find the DWORD “DanS” (0x536e6144) at the beginning of the header.
 
-![[Pasted image 20241029075535.png|*_Fig 1.3 - XORed DWORD "DanS" (0x536e6144)_*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029075535.png)
+_Fig 1.3 - XORed DWORD "DanS" (0x536e6144)_
 
 Decrypting the XORed DWORD "DanS" using checksum to get plain text data:
 
-![[Pasted image 20241029080119.png]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080119.png)
 
 Following the DWORD “DanS” at beginning of the header are three null DWORDs used for padding.
 
-![[Pasted image 20241029080315.png|*Fig 1.4 - Padding*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080315.png)
+_Fig 1.4 - Padding_
 
 The rest of the rich header consists of data that fingerprints build information of the executable. Each entry is 8 bytes long and has the following structure:
 ```
@@ -47,9 +51,11 @@ struct RICH_ENTRY {
 }
 ```
 
-![[Pasted image 20241029080443.png|*Fig 1.5 - Rich Data Enteries (Each lines represents one entry)*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080443.png
+_Fig 1.5 - Rich Data Enteries (Each lines represents one entry)_
 
-![[Pasted image 20241029080508.png|*_Fig 1.6 - Copying these as a python array_*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080508.png)
+_Fig 1.6 - Copying these as a python array_
 
 Decrypting the XORed Rich Entries using the checksum in the header:
 ```python
@@ -75,7 +81,8 @@ data = bytes([
 xor(data, key)
 ```
 
-![[Pasted image 20241029081148.png|*Fig 1.7 - Decrypting the XORed Rich Entries using the checksum in the header*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029081148.png)
+_Fig 1.7 - Decrypting the XORed Rich Entries using the checksum in the header_
 
 Splitting the decrypted Rich Entries into chunks of 8 bytes:
 ```python
@@ -108,11 +115,13 @@ for i in chunks:
 	print(i)
 ```
 
-![[Pasted image 20241029081558.png|*Fig 1.8 - Splitting decrypted Rich Entries*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029081558.png)
+_Fig 1.8 - Splitting decrypted Rich Entries_
 
 
 Each 8-byte chunk in `chunks` contains a decoded segment with the following structure:
-![[Pasted image 20241029091626.png|*Fig 1.9 - Rich Entry Structure*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029091626.png)
+_Fig 1.9 - Rich Entry Structure_
 
 1. **ID**: A unique identifier for the entry, often used to specify the component or module type.
 2. **Version**: Specifies the version of the associated component or module, useful for tracking software versions or build details.
@@ -140,7 +149,8 @@ Here:
 - `rev_endiannes()` is used to reverse the byte order of each part to match endianness requirements.
 - `int(..., 16)` converts each reversed hex segment into an integer.
 
-![[Pasted image 20241029092258.png|*Fig 1.9 - Extracted values from Rich Header*]]
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029092258.png)
+_Fig 1.9 - Extracted values from Rich Header_
 
 Translating these values into the actual tools types and versions is a matter of collecting the values from actual Visual Studio installations.
 
