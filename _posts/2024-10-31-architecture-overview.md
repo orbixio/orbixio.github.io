@@ -49,24 +49,24 @@ Whenever an application is run it is allocated it very own Virtual Memory that c
 
 
 **Stack**
-> *Last-in First-out (LIFO) design, fixed in size and data in it can only be accessed in a specific order by push-ing and pop-ing data.*
-> *Grows from higher address to lower addresses.*
-> *Contains local variables, arguments passed on to the program, and the return address of the parent process that called the program.*
-[Visual Reference](https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/aed105638dc28ee3524baeaba8925e12.png)
+*Last-in First-out (LIFO) design, fixed in size and data in it can only be accessed in a specific order by push-ing and pop-ing data.*
+*Grows from higher address to lower addresses.*
+*Contains local variables, arguments passed on to the program, and the return address of the parent process that called the program.*
+![](https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/aed105638dc28ee3524baeaba8925e12.png)
 
 **Heap**
-> *Data can be stored and retrieved in any order.* 
-> *Heap is slower than the Stack.*
-> *Memory is dynamically allocated using functions like `malloc` etc.*                                                                                              
+*Data can be stored and retrieved in any order.* 
+*Heap is slower than the Stack.*
+*Memory is dynamically allocated using functions like `malloc` etc.*                                                                                              
 
 **Data**
-> *Used to store global and static data that is not variable remains constant.*
-> Consists of "two parts": 
+*Used to store global and static data that is not variable remains constant.*
+Consists of "two parts": 
   `Data` is used to hold variables
   `.bss` is used to hold unassigned variables
 
 **Text**
-> *Used to store `.text` section of PE (Portable Executable) which contains the "instructions" that are executed by the CPU.*
+*Used to store `.text` section of PE (Portable Executable) which contains the "instructions" that are executed by the CPU.*
 
 #### **IO/Storage Devices**
 
