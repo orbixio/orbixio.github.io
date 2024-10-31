@@ -63,7 +63,7 @@ struct RICH_ENTRY {
 }
 ```
 
-![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080443.png
+![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080443.png)
 _Fig 1.5 - Rich Data Enteries (Each lines represents one entry)_
 
 ![](https://orbixio.netlify.app/assets/img/Pasted image 20241029080508.png)
