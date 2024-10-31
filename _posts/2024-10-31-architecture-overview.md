@@ -1,3 +1,14 @@
+---
+title: Computer Architecture (Overview)
+description: Introduction to computer architecture giving in-depth overview of essential topics!
+author: orbixio
+date: 2024-10-31 20:55:00 +0800
+categories: [Computer Architecture]
+tags: [arch]
+pin: true
+media_subpath: '/posts/computer_arch_overview'
+---
+
 > Computer architecture describes the functionality, organization, and implementation of computer systems
 
 The most commonly used architecture, most computers today are built on is the [Von Neumann Architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture).
