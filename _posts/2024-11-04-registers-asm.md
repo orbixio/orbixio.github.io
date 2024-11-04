@@ -1,5 +1,5 @@
 ---
-title: An Introduction to Registers (Assembly): The Fastest Storage Medium
+title: An Introduction to Registers (Assembly)
 description: Registers are small, high-speed storage locations within a CPU that temporarily hold data and instructions for quick access.
 author: orbixio
 date: 2024-10-31 20:55:00 +0800
